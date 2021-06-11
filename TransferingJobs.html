@@ -1,0 +1,1243 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; TransferJobsToOtherDB</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pyiron publication template" href="README.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">TransferJobsToOtherDB</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   pyiron publication template
+  </a>
+ </li>
+</ul>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/TransferingJobs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Leimeroth/TransferJobsToOtherDB/master?urlpath=lab/tree/TransferingJobs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">pyiron_base</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron_base.archiving.import_archive</span> <span class="kn">import</span> <span class="n">update_id_lst</span>
+<span class="kn">from</span> <span class="nn">pyiron_base.archiving.export_archive</span> <span class="kn">import</span> <span class="n">new_job_id</span>
+<span class="kn">from</span> <span class="nn">pyiron_atomistics</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<span class="c1"># Copy definition of export_database function, but comment unnecessary lines</span>
+<span class="k">def</span> <span class="nf">export_database_as_df</span><span class="p">(</span>
+    <span class="n">pr</span>
+    <span class="c1">#project_instance, directory_to_transfer,</span>
+    <span class="c1">#archive_directory</span>
+<span class="p">):</span>
+    <span class="c1"># here we first check wether the archive directory is a path</span>
+    <span class="c1"># or a project object</span>
+    <span class="c1">#if isinstance(archive_directory, str):</span>
+    <span class="c1">#    archive_directory = os.path.basename(archive_directory)</span>
+    <span class="c1"># if the archive_directory is a project</span>
+    <span class="c1">#elif static_isinstance(</span>
+    <span class="c1">#    obj=archive_directory.__class__,</span>
+    <span class="c1">#    obj_type=[</span>
+    <span class="c1">#        &quot;pyiron_base.project.generic.Project&quot;,</span>
+    <span class="c1">#    ]</span>
+    <span class="c1">#):</span>
+    <span class="c1">#    archive_directory = archive_directory.path</span>
+    <span class="c1">#else:</span>
+     <span class="c1">#   raise RuntimeError(</span>
+     <span class="c1">#       &quot;&quot;&quot;the given path for exporting to,</span>
+     <span class="c1">#       does not have the correct format paths as string</span>
+     <span class="c1">#       or pyiron Project objects are expected&quot;&quot;&quot;</span>
+     <span class="c1">#   )</span>
+    <span class="c1">#directory_to_transfer = os.path.basename(directory_to_transfer)</span>
+    <span class="c1">#pr = project_instance.open(os.curdir)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+    <span class="n">job_ids_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">new_job_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">job_ids_sorted</span><span class="p">)))</span>
+    <span class="n">job_translate_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">j</span><span class="p">:</span> <span class="n">n</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">job_ids_sorted</span><span class="p">,</span> <span class="n">new_job_ids</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">new_job_id</span><span class="p">(</span>
+            <span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span> <span class="n">job_translate_dict</span><span class="o">=</span><span class="n">job_translate_dict</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span>
+    <span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;masterid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">new_job_id</span><span class="p">(</span>
+            <span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span> <span class="n">job_translate_dict</span><span class="o">=</span><span class="n">job_translate_dict</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">masterid</span>
+    <span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;parentid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">new_job_id</span><span class="p">(</span><span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span> <span class="n">job_translate_dict</span><span class="o">=</span><span class="n">job_translate_dict</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">parentid</span>
+    <span class="p">]</span>
+    <span class="c1">#df[&#39;project&#39;] = update_project(</span>
+    <span class="c1">#    project_instance,</span>
+    <span class="c1">#    directory_to_transfer=directory_to_transfer,</span>
+    <span class="c1">#    archive_directory=archive_directory, df=df</span>
+    <span class="c1">#)</span>
+    <span class="c1">#del df[&quot;projectpath&quot;]</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># Taken from import_jobs, but without the unnecessary lines</span>
+<span class="k">def</span> <span class="nf">import_dataframe_to_db</span><span class="p">(</span><span class="n">pr</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+    <span class="n">job_id_lst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;id&#39;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;parentid&#39;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;parentid&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;masterid&#39;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;masterid&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;timestart&#39;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;timestart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;timestart&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="s1">&#39;timestop&#39;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;timestop&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;timestop&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="s1">&#39;username&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span> 
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">login_user</span>
+        <span class="n">job_id</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">add_item_dict</span><span class="p">(</span><span class="n">par_dict</span><span class="o">=</span><span class="n">entry</span><span class="p">)</span>
+        <span class="n">job_id_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+
+    <span class="c1"># Update parent and master ids</span>
+    <span class="k">for</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">masterid</span><span class="p">,</span> <span class="n">parentid</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="n">job_id_lst</span><span class="p">,</span>
+        <span class="n">update_id_lst</span><span class="p">(</span><span class="n">record_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;masterid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id_lst</span><span class="o">=</span><span class="n">job_id_lst</span><span class="p">),</span>
+        <span class="n">update_id_lst</span><span class="p">(</span><span class="n">record_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;parentid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id_lst</span><span class="o">=</span><span class="n">job_id_lst</span><span class="p">),</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">masterid</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">parentid</span><span class="p">):</span>
+            <span class="n">pr</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">item_update</span><span class="p">(</span>
+                <span class="n">item_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span>
+                <span class="n">par_dict</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;parentid&quot;</span><span class="p">:</span> <span class="n">parentid</span><span class="p">,</span> <span class="s2">&quot;masterid&quot;</span><span class="p">:</span> <span class="n">masterid</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">_configuration</span><span class="p">[</span><span class="s1">&#39;sql_connection_string&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sqlite:///db1.db&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;ProjectDB1&quot;</span><span class="p">)</span>
+<span class="n">pr</span><span class="o">.</span><span class="n">remove_jobs_silently</span><span class="p">()</span>
+<span class="n">ref</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="s2">&quot;Lammps&quot;</span><span class="p">,</span> <span class="s2">&quot;Ref&quot;</span><span class="p">)</span>
+<span class="n">ref</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ref</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">list_potentials</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">murn</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="s2">&quot;Murnaghan&quot;</span><span class="p">,</span> <span class="s2">&quot;murn&quot;</span><span class="p">)</span>
+<span class="n">murn</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">df_1</span> <span class="o">=</span> <span class="n">export_database_as_df</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>
+<span class="n">df_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn was saved and received the ID: 1
+The job strain_0_9 was saved and received the ID: 2
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_92 was saved and received the ID: 3
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_94 was saved and received the ID: 4
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_96 was saved and received the ID: 5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_98 was saved and received the ID: 6
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_0 was saved and received the ID: 7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_02 was saved and received the ID: 8
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_04 was saved and received the ID: 9
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_06 was saved and received the ID: 10
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_08 was saved and received the ID: 11
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_1 was saved and received the ID: 12
+job_id:  2 finished
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>job_id:  3 finished
+job_id:  4 finished
+job_id:  5 finished
+job_id:  6 finished
+job_id:  7 finished
+job_id:  8 finished
+job_id:  9 finished
+job_id:  10 finished
+job_id:  11 finished
+job_id:  12 finished
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>murn</td>
+      <td>/murn</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/</td>
+      <td>2021-06-11 12:30:50.812518</td>
+      <td>2021-06-11 12:30:56.246277</td>
+      <td>5.0</td>
+      <td>pyiron_test@PC#1#11/11</td>
+      <td>Murnaghan</td>
+      <td>0.3.0</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_9</td>
+      <td>/strain_0_9</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:51.153598</td>
+      <td>2021-06-11 12:30:51.305323</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_92</td>
+      <td>/strain_0_92</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:51.622300</td>
+      <td>2021-06-11 12:30:51.779604</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_94</td>
+      <td>/strain_0_94</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:52.098094</td>
+      <td>2021-06-11 12:30:52.242662</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_96</td>
+      <td>/strain_0_96</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:52.560811</td>
+      <td>2021-06-11 12:30:52.721982</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_98</td>
+      <td>/strain_0_98</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:53.037029</td>
+      <td>2021-06-11 12:30:53.182062</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_0</td>
+      <td>/strain_1_0</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:53.501370</td>
+      <td>2021-06-11 12:30:53.648019</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_02</td>
+      <td>/strain_1_02</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:53.967053</td>
+      <td>2021-06-11 12:30:54.113487</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_04</td>
+      <td>/strain_1_04</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:54.433582</td>
+      <td>2021-06-11 12:30:54.585113</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_06</td>
+      <td>/strain_1_06</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:54.902625</td>
+      <td>2021-06-11 12:30:55.049998</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_08</td>
+      <td>/strain_1_08</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:55.368824</td>
+      <td>2021-06-11 12:30:55.512853</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_1</td>
+      <td>/strain_1_1</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:55.826931</td>
+      <td>2021-06-11 12:30:55.976596</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">open_local_sqlite_connection</span><span class="p">(</span><span class="s2">&quot;sqlite:///db2.db&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr2</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;ProjectDB2&quot;</span><span class="p">)</span>
+<span class="n">pr2</span><span class="o">.</span><span class="n">remove_jobs_silently</span><span class="p">()</span>
+<span class="n">ref</span> <span class="o">=</span> <span class="n">pr2</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="s2">&quot;Lammps&quot;</span><span class="p">,</span> <span class="s2">&quot;Ref&quot;</span><span class="p">)</span>
+<span class="n">ref</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr2</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ref</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">list_potentials</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">murn</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="s2">&quot;Murnaghan&quot;</span><span class="p">,</span> <span class="s2">&quot;murn&quot;</span><span class="p">)</span>
+<span class="n">murn</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">df_2</span> <span class="o">=</span> <span class="n">export_database_as_df</span><span class="p">(</span><span class="n">pr2</span><span class="p">)</span>
+<span class="n">df_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn was saved and received the ID: 1
+The job strain_0_9 was saved and received the ID: 2
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_92 was saved and received the ID: 3
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_94 was saved and received the ID: 4
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_96 was saved and received the ID: 5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_0_98 was saved and received the ID: 6
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_0 was saved and received the ID: 7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_02 was saved and received the ID: 8
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_04 was saved and received the ID: 9
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_06 was saved and received the ID: 10
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_08 was saved and received the ID: 11
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job strain_1_1 was saved and received the ID: 12
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity indices. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity velocities. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+/home/niklas/git_projects/pyiron_atomistics/pyiron_atomistics/lammps/units.py:201: UserWarning: Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity steps. Returning un-normalized quantity
+  warnings.warn(message=&quot;Warning: Couldn&#39;t determine the LAMMPS to pyiron unit conversion type of quantity &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>job_id:  2 finished
+job_id:  3 finished
+job_id:  4 finished
+job_id:  5 finished
+job_id:  6 finished
+job_id:  7 finished
+job_id:  8 finished
+job_id:  9 finished
+job_id:  10 finished
+job_id:  11 finished
+job_id:  12 finished
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>murn</td>
+      <td>/murn</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/</td>
+      <td>2021-06-11 12:30:57.190191</td>
+      <td>2021-06-11 12:31:03.191016</td>
+      <td>6.0</td>
+      <td>pyiron_test@PC#1#11/11</td>
+      <td>Murnaghan</td>
+      <td>0.3.0</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_0_9</td>
+      <td>/strain_0_9</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:30:57.549934</td>
+      <td>2021-06-11 12:30:57.709295</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_0_92</td>
+      <td>/strain_0_92</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:30:58.073402</td>
+      <td>2021-06-11 12:30:58.228834</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_0_94</td>
+      <td>/strain_0_94</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:30:58.580268</td>
+      <td>2021-06-11 12:30:58.729568</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_0_96</td>
+      <td>/strain_0_96</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:30:59.085134</td>
+      <td>2021-06-11 12:30:59.236857</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_0_98</td>
+      <td>/strain_0_98</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:30:59.590905</td>
+      <td>2021-06-11 12:30:59.744448</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_0</td>
+      <td>/strain_1_0</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:31:00.106639</td>
+      <td>2021-06-11 12:31:00.258562</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_02</td>
+      <td>/strain_1_02</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:31:00.618802</td>
+      <td>2021-06-11 12:31:00.777715</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_04</td>
+      <td>/strain_1_04</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:31:01.137349</td>
+      <td>2021-06-11 12:31:01.289459</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_06</td>
+      <td>/strain_1_06</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:31:01.664946</td>
+      <td>2021-06-11 12:31:01.821160</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_08</td>
+      <td>/strain_1_08</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:31:02.188195</td>
+      <td>2021-06-11 12:31:02.346178</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_1</td>
+      <td>/strain_1_1</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 12:31:02.718342</td>
+      <td>2021-06-11 12:31:02.874122</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">open_local_sqlite_connection</span><span class="p">(</span><span class="s2">&quot;sqlite:///db3.db&quot;</span><span class="p">)</span>
+<span class="n">pr3</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;ProjectDB3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">import_dataframe_to_db</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_1</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="n">pr3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">5</span><span class="n">f9bea9493f5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">import_dataframe_to_db</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_1</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="n">pr3</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-93559922ecab&gt;</span> in <span class="ni">import_dataframe_to_db</span><span class="nt">(pr, df)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="n">job_id_lst</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>         <span class="n">update_id_lst</span><span class="p">(</span><span class="n">record_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;masterid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id_lst</span><span class="o">=</span><span class="n">job_id_lst</span><span class="p">),</span>
+<span class="ne">---&gt; </span><span class="mi">88</span>         <span class="n">update_id_lst</span><span class="p">(</span><span class="n">record_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;parentid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id_lst</span><span class="o">=</span><span class="n">job_id_lst</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">masterid</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">parentid</span><span class="p">):</span>
+
+<span class="nn">~/git_projects/pyiron_base/pyiron_base/archiving/import_archive.py</span> in <span class="ni">update_id_lst</span><span class="nt">(record_lst, job_id_lst)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">masterid_lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="k">for</span> <span class="n">masterid</span> <span class="ow">in</span> <span class="n">record_lst</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">25</span>         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">masterid</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="n">masterid_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">masterid</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">masterid</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">masterid</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: ufunc &#39;isnan&#39; not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule &#39;&#39;safe&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_1</span><span class="p">[</span><span class="s2">&quot;parentid&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     None
+1     None
+2     None
+3     None
+4     None
+5     None
+6     None
+7     None
+8     None
+9     None
+10    None
+11    None
+Name: parentid, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">pyiron publication template</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By pyiron<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
