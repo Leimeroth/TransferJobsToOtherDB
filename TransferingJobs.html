@@ -192,6 +192,7 @@
   <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pyiron_base</span> <span class="kn">import</span> <span class="n">Settings</span>
 <span class="kn">from</span> <span class="nn">pyiron_base.archiving.import_archive</span> <span class="kn">import</span> <span class="n">update_id_lst</span>
 <span class="kn">from</span> <span class="nn">pyiron_base.archiving.export_archive</span> <span class="kn">import</span> <span class="n">new_job_id</span>
@@ -273,7 +274,7 @@
             <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">login_user</span>
         <span class="n">job_id</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">add_item_dict</span><span class="p">(</span><span class="n">par_dict</span><span class="o">=</span><span class="n">entry</span><span class="p">)</span>
         <span class="n">job_id_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
-
+    
     <span class="c1"># Update parent and master ids</span>
     <span class="k">for</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">masterid</span><span class="p">,</span> <span class="n">parentid</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
         <span class="n">job_id_lst</span><span class="p">,</span>
@@ -496,8 +497,8 @@ job_id:  12 finished
       <td>/murn</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/</td>
-      <td>2021-06-11 12:30:50.812518</td>
-      <td>2021-06-11 12:30:56.246277</td>
+      <td>2021-06-11 14:05:30.297538</td>
+      <td>2021-06-11 14:05:35.851804</td>
       <td>5.0</td>
       <td>pyiron_test@PC#1#11/11</td>
       <td>Murnaghan</td>
@@ -514,8 +515,8 @@ job_id:  12 finished
       <td>/strain_0_9</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:51.153598</td>
-      <td>2021-06-11 12:30:51.305323</td>
+      <td>2021-06-11 14:05:30.643882</td>
+      <td>2021-06-11 14:05:30.800220</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -532,8 +533,8 @@ job_id:  12 finished
       <td>/strain_0_92</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:51.622300</td>
-      <td>2021-06-11 12:30:51.779604</td>
+      <td>2021-06-11 14:05:31.121597</td>
+      <td>2021-06-11 14:05:31.278069</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -550,8 +551,8 @@ job_id:  12 finished
       <td>/strain_0_94</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:52.098094</td>
-      <td>2021-06-11 12:30:52.242662</td>
+      <td>2021-06-11 14:05:31.600593</td>
+      <td>2021-06-11 14:05:31.749007</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -568,8 +569,8 @@ job_id:  12 finished
       <td>/strain_0_96</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:52.560811</td>
-      <td>2021-06-11 12:30:52.721982</td>
+      <td>2021-06-11 14:05:32.076108</td>
+      <td>2021-06-11 14:05:32.226670</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -586,8 +587,8 @@ job_id:  12 finished
       <td>/strain_0_98</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:53.037029</td>
-      <td>2021-06-11 12:30:53.182062</td>
+      <td>2021-06-11 14:05:32.548196</td>
+      <td>2021-06-11 14:05:32.705140</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -604,8 +605,8 @@ job_id:  12 finished
       <td>/strain_1_0</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:53.501370</td>
-      <td>2021-06-11 12:30:53.648019</td>
+      <td>2021-06-11 14:05:33.039370</td>
+      <td>2021-06-11 14:05:33.196301</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -622,8 +623,8 @@ job_id:  12 finished
       <td>/strain_1_02</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:53.967053</td>
-      <td>2021-06-11 12:30:54.113487</td>
+      <td>2021-06-11 14:05:33.545215</td>
+      <td>2021-06-11 14:05:33.690813</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -640,8 +641,8 @@ job_id:  12 finished
       <td>/strain_1_04</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:54.433582</td>
-      <td>2021-06-11 12:30:54.585113</td>
+      <td>2021-06-11 14:05:34.023840</td>
+      <td>2021-06-11 14:05:34.172408</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -658,8 +659,8 @@ job_id:  12 finished
       <td>/strain_1_06</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:54.902625</td>
-      <td>2021-06-11 12:30:55.049998</td>
+      <td>2021-06-11 14:05:34.492665</td>
+      <td>2021-06-11 14:05:34.640453</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -676,8 +677,8 @@ job_id:  12 finished
       <td>/strain_1_08</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:55.368824</td>
-      <td>2021-06-11 12:30:55.512853</td>
+      <td>2021-06-11 14:05:34.956991</td>
+      <td>2021-06-11 14:05:35.111736</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -694,8 +695,8 @@ job_id:  12 finished
       <td>/strain_1_1</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB1/murn_hdf5/</td>
-      <td>2021-06-11 12:30:55.826931</td>
-      <td>2021-06-11 12:30:55.976596</td>
+      <td>2021-06-11 14:05:35.422216</td>
+      <td>2021-06-11 14:05:35.575972</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -912,8 +913,8 @@ job_id:  12 finished
       <td>/murn</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/</td>
-      <td>2021-06-11 12:30:57.190191</td>
-      <td>2021-06-11 12:31:03.191016</td>
+      <td>2021-06-11 14:05:36.872687</td>
+      <td>2021-06-11 14:05:43.035660</td>
       <td>6.0</td>
       <td>pyiron_test@PC#1#11/11</td>
       <td>Murnaghan</td>
@@ -930,8 +931,8 @@ job_id:  12 finished
       <td>/strain_0_9</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:30:57.549934</td>
-      <td>2021-06-11 12:30:57.709295</td>
+      <td>2021-06-11 14:05:37.232790</td>
+      <td>2021-06-11 14:05:37.396585</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -948,8 +949,8 @@ job_id:  12 finished
       <td>/strain_0_92</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:30:58.073402</td>
-      <td>2021-06-11 12:30:58.228834</td>
+      <td>2021-06-11 14:05:37.757920</td>
+      <td>2021-06-11 14:05:37.918036</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -966,8 +967,8 @@ job_id:  12 finished
       <td>/strain_0_94</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:30:58.580268</td>
-      <td>2021-06-11 12:30:58.729568</td>
+      <td>2021-06-11 14:05:38.278969</td>
+      <td>2021-06-11 14:05:38.429737</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -984,8 +985,8 @@ job_id:  12 finished
       <td>/strain_0_96</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:30:59.085134</td>
-      <td>2021-06-11 12:30:59.236857</td>
+      <td>2021-06-11 14:05:38.787357</td>
+      <td>2021-06-11 14:05:38.939806</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1002,8 +1003,8 @@ job_id:  12 finished
       <td>/strain_0_98</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:30:59.590905</td>
-      <td>2021-06-11 12:30:59.744448</td>
+      <td>2021-06-11 14:05:39.298959</td>
+      <td>2021-06-11 14:05:39.454319</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1020,8 +1021,8 @@ job_id:  12 finished
       <td>/strain_1_0</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:31:00.106639</td>
-      <td>2021-06-11 12:31:00.258562</td>
+      <td>2021-06-11 14:05:39.817246</td>
+      <td>2021-06-11 14:05:39.985694</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1038,8 +1039,8 @@ job_id:  12 finished
       <td>/strain_1_02</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:31:00.618802</td>
-      <td>2021-06-11 12:31:00.777715</td>
+      <td>2021-06-11 14:05:40.357155</td>
+      <td>2021-06-11 14:05:40.517492</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1056,8 +1057,8 @@ job_id:  12 finished
       <td>/strain_1_04</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:31:01.137349</td>
-      <td>2021-06-11 12:31:01.289459</td>
+      <td>2021-06-11 14:05:40.900405</td>
+      <td>2021-06-11 14:05:41.064105</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1074,8 +1075,8 @@ job_id:  12 finished
       <td>/strain_1_06</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:31:01.664946</td>
-      <td>2021-06-11 12:31:01.821160</td>
+      <td>2021-06-11 14:05:41.449830</td>
+      <td>2021-06-11 14:05:41.619588</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1092,8 +1093,8 @@ job_id:  12 finished
       <td>/strain_1_08</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:31:02.188195</td>
-      <td>2021-06-11 12:31:02.346178</td>
+      <td>2021-06-11 14:05:42.000319</td>
+      <td>2021-06-11 14:05:42.162433</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1110,8 +1111,8 @@ job_id:  12 finished
       <td>/strain_1_1</td>
       <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
       <td>ProjectDB2/murn_hdf5/</td>
-      <td>2021-06-11 12:31:02.718342</td>
-      <td>2021-06-11 12:31:02.874122</td>
+      <td>2021-06-11 14:05:42.538015</td>
+      <td>2021-06-11 14:05:42.695107</td>
       <td>0.0</td>
       <td>pyiron_test@PC#1</td>
       <td>Lammps</td>
@@ -1127,6 +1128,12 @@ job_id:  12 finished
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">open_local_sqlite_connection</span><span class="p">(</span><span class="s2">&quot;sqlite:///db3.db&quot;</span><span class="p">)</span>
 <span class="n">pr3</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;ProjectDB3&quot;</span><span class="p">)</span>
+<span class="n">pr3</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyiron_base.database.generic.DatabaseAccess at 0x7f12ba6b09a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1137,54 +1144,500 @@ job_id:  12 finished
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">5</span><span class="n">f9bea9493f5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">import_dataframe_to_db</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_1</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="n">pr3</span><span class="p">)</span>
-
-<span class="nn">&lt;ipython-input-1-93559922ecab&gt;</span> in <span class="ni">import_dataframe_to_db</span><span class="nt">(pr, df)</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="n">job_id_lst</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span>         <span class="n">update_id_lst</span><span class="p">(</span><span class="n">record_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;masterid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id_lst</span><span class="o">=</span><span class="n">job_id_lst</span><span class="p">),</span>
-<span class="ne">---&gt; </span><span class="mi">88</span>         <span class="n">update_id_lst</span><span class="p">(</span><span class="n">record_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;parentid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id_lst</span><span class="o">=</span><span class="n">job_id_lst</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">masterid</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">parentid</span><span class="p">):</span>
-
-<span class="nn">~/git_projects/pyiron_base/pyiron_base/archiving/import_archive.py</span> in <span class="ni">update_id_lst</span><span class="nt">(record_lst, job_id_lst)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">masterid_lst</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="k">for</span> <span class="n">masterid</span> <span class="ow">in</span> <span class="n">record_lst</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">25</span>         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">masterid</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="n">masterid_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">masterid</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">masterid</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">masterid</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
-
-<span class="ne">TypeError</span>: ufunc &#39;isnan&#39; not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule &#39;&#39;safe&#39;&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_1</span><span class="p">[</span><span class="s2">&quot;parentid&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr3</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="n">pr3</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     None
-1     None
-2     None
-3     None
-4     None
-5     None
-6     None
-7     None
-8     None
-9     None
-10    None
-11    None
-Name: parentid, dtype: object
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>murn</td>
+      <td>/murn</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/</td>
+      <td>2021-06-11 12:30:50.812518</td>
+      <td>2021-06-11 12:30:56.246277</td>
+      <td>5.0</td>
+      <td>pyiron_test@PC#1#11/11</td>
+      <td>Murnaghan</td>
+      <td>0.3.0</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_9</td>
+      <td>/strain_0_9</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:51.153598</td>
+      <td>2021-06-11 12:30:51.305323</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_92</td>
+      <td>/strain_0_92</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:51.622300</td>
+      <td>2021-06-11 12:30:51.779604</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_94</td>
+      <td>/strain_0_94</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:52.098094</td>
+      <td>2021-06-11 12:30:52.242662</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_96</td>
+      <td>/strain_0_96</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:52.560811</td>
+      <td>2021-06-11 12:30:52.721982</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>92</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_02</td>
+      <td>/strain_1_02</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 14:05:33.545215</td>
+      <td>2021-06-11 14:05:33.690813</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>85.0</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>93</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_04</td>
+      <td>/strain_1_04</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 14:05:34.023840</td>
+      <td>2021-06-11 14:05:34.172408</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>85.0</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>94</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_06</td>
+      <td>/strain_1_06</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 14:05:34.492665</td>
+      <td>2021-06-11 14:05:34.640453</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>85.0</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>95</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_08</td>
+      <td>/strain_1_08</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 14:05:34.956991</td>
+      <td>2021-06-11 14:05:35.111736</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>85.0</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>96</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_1_1</td>
+      <td>/strain_1_1</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 14:05:35.422216</td>
+      <td>2021-06-11 14:05:35.575972</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>85.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>96 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">import_dataframe_to_db</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_2</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="n">pr3</span><span class="p">)</span>
+<span class="n">pr3</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>murn</td>
+      <td>/murn</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/</td>
+      <td>2021-06-11 12:30:50.812518</td>
+      <td>2021-06-11 12:30:56.246277</td>
+      <td>5.0</td>
+      <td>pyiron_test@PC#1#11/11</td>
+      <td>Murnaghan</td>
+      <td>0.3.0</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_9</td>
+      <td>/strain_0_9</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:51.153598</td>
+      <td>2021-06-11 12:30:51.305323</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_92</td>
+      <td>/strain_0_92</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:51.622300</td>
+      <td>2021-06-11 12:30:51.779604</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_94</td>
+      <td>/strain_0_94</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:52.098094</td>
+      <td>2021-06-11 12:30:52.242662</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>strain_0_96</td>
+      <td>/strain_0_96</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB1/murn_hdf5/</td>
+      <td>2021-06-11 12:30:52.560811</td>
+      <td>2021-06-11 12:30:52.721982</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>104</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_02</td>
+      <td>/strain_1_02</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 14:05:40.357155</td>
+      <td>2021-06-11 14:05:40.517492</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>105</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_04</td>
+      <td>/strain_1_04</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 14:05:40.900405</td>
+      <td>2021-06-11 14:05:41.064105</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>106</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_06</td>
+      <td>/strain_1_06</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 14:05:41.449830</td>
+      <td>2021-06-11 14:05:41.619588</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>107</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_08</td>
+      <td>/strain_1_08</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 14:05:42.000319</td>
+      <td>2021-06-11 14:05:42.162433</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>108</td>
+      <td>finished</td>
+      <td>Al4</td>
+      <td>strain_1_1</td>
+      <td>/strain_1_1</td>
+      <td>/home/niklas/git_projects/TransferJobsToOtherDB/</td>
+      <td>ProjectDB2/murn_hdf5/</td>
+      <td>2021-06-11 14:05:42.538015</td>
+      <td>2021-06-11 14:05:42.695107</td>
+      <td>0.0</td>
+      <td>pyiron_test@PC#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>97.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>108 rows × 15 columns</p>
+</div></div></div>
 </div>
 
     <script type="text/x-thebe-config">
